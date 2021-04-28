@@ -1,8 +1,13 @@
 const ContentList = ({ content }) => {
   return (
     <ul>
-      {/* TODO: Display content */}
-      {console.info(`Available content: ${content}`)}
+      {content.map((character) => (
+        <img
+          key={character.id}
+          src={character.image}
+          alt="Where are Rick n Morty?"
+        />
+      ))}
     </ul>
   );
 };

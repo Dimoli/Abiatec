@@ -1,11 +1,13 @@
 .Header {
+  position: fixed;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  position: relative;
   padding: 3rem;
   border-radius: 1.5rem;
   box-shadow: rgba(149, 157, 165, 0.4) 0 8px 24px;
+  background-color: aqua;
 }
 
 .Header-logo {
