@@ -1,9 +1,9 @@
 const ContentList = ({ content }) => {
   return (
     <ul>
-      {content.map((character) => (
+      {content.map((character, index) => (
         <img
-          key={character.id}
+          key={character.id + character.name + index}
           src={character.image}
           alt="Where are Rick n Morty?"
         />

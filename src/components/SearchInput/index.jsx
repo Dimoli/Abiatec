@@ -1,16 +1,19 @@
-import { useCallback, useState } from 'react';
+import { useCallback } from "react";
 import Button from "../Button";
 import "./index.css";
 
-const SearchInput = ({ onSearch }) => {
-  const [value, setValue] = useState("");
-
-  const onSearchChange = useCallback((e) => setValue(e.target.value), []);
-  const onSubmit = useCallback(() => onSearch(value), [value, onSearch]);
+const SearchInput = ({ onSearch, inputValue, setInputValue }) => {
+  const onSearchChange = useCallback((e) => setInputValue(e.target.value), [
+    setInputValue,
+  ]);
+  const onSubmit = useCallback(() => onSearch(inputValue), [
+    inputValue,
+    onSearch,
+  ]);
 
   return (
     <div className="SearchInput">
-      <input value={value} onChange={onSearchChange} />
+      <input value={inputValue} onChange={onSearchChange} />
       <Button onClick={onSubmit}>Submit</Button>
     </div>
   );
